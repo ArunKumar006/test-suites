@@ -12,3 +12,22 @@ def test_some_primes():
     }
 def test_sum():
     assert 10+2==12
+
+import re
+
+def validate_email(email):
+    # Regular expression for a simple email validation
+    pattern = r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+    return re.match(pattern, email) is not None
+
+# pytest test cases using regex
+def test_valid_email():
+    assert validate_email("user@example.com") == True
+
+def test_invalid_email():
+    assert validate_email("invalid_email") == False
+
+def test_valid_email_with_subdomain():
+    assert validate_email("user@sub.example.co.uk") == True
+
+
