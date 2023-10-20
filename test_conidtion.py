@@ -1,3 +1,5 @@
+import re
+
 def test_uppercase():
     assert "loud noises".upper() == "LOUD NOISES"
 
@@ -13,7 +15,6 @@ def test_some_primes():
 def test_sum():
     assert 10+2==12
 
-import re
 
 def validate_email(email):
     # Regular expression for a simple email validation
