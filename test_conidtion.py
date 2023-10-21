@@ -31,4 +31,14 @@ def test_invalid_email():
 def test_valid_email_with_subdomain():
     assert validate_email("user@sub.example.co.uk") == True
 
+def validate_phone(phone):
+    match=re.match(r"\+\d{12}$",phone)
+    return match is not None
 
+
+
+def test_valid_phone():
+    assert validate_phone("+919544794545")
+
+def test_invalid_phone():
+    assert validate_phone("+9195447945450") == False
